@@ -10,7 +10,7 @@ export default function(args, buildConfig) {
   let userConfig = getUserConfig(args)
   let pluginConfig = getPluginConfig()
   let {entry, output, plugins = {}, ...otherBuildConfig} = buildConfig
-  let hotMiddlewareOptions = args.reload ? '?reload=true' : ''
+  let hotMiddlewareOptions = args.reload ? '?reload=true' : '' 
 
   if (args['auto-install']) {
     plugins.install = {}
@@ -22,7 +22,7 @@ export default function(args, buildConfig) {
     entry: [
       // Polyfill EventSource for IE, as webpack-hot-middleware/client uses it
       require.resolve('eventsource-polyfill'),
-      require.resolve('webpack-hot-middleware/client') + hotMiddlewareOptions,
+      require.resolve('webpack-hot-middleware/client') + "?http://localhost:3000" + hotMiddlewareOptions,
       entry
     ],
     output,

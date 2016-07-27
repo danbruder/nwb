@@ -16,7 +16,7 @@ export default function(args) {
     output: {
       path: path.resolve(dist),
       filename: 'app.js',
-      publicPath: '/'
+      publicPath: 'http://localhost:3000/'
     },
     plugins: {
       html: getDefaultHTMLConfig()
